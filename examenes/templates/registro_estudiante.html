@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}Registro Estudiante{% endblock %}
+{% block container %}
+
+<header><h1>Registro del Estudiante</h2></header>
+
+<div class="icfes">
+    <div class="info">
+        <div class="form-box">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="boton">Continuar al Simulacro</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+

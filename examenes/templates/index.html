@@ -1,0 +1,17 @@
+{% extends 'base.html'%}
+{% block container %}
+
+<header>
+    <h1>SIMULACRO PRUEBA ICFES</h1>
+</header>
+
+<div class="icfes">
+        <div class="info">
+            <h1>Bienvenido al Simulacro de las Pruebas ICFES</h1> <br>
+            <p>Por favor haz clic en el botón para iniciar tu examen.</p>
+            <a href="{% url 'registro_estudiante' %}" target="_blank" class="boton">Iniciar Simulacro</a>
+        </div>
+    </div>
+
+
+{% endblock %}

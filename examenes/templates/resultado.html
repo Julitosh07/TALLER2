@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block container %}
+<header>Resultado del Simulacro Pruebas ICFES</header>
+<div class="icfes">
+    <div class="info">
+        
+        <div class="container mt-5 text-center">
+            <h1>Resultado del estudiante: {{ estudiante.nombre }} {{ estudiante.apellido }}</h1>
+            <p><strong>Identificación:</strong> {{ estudiante.documento }}</p>
+            <p><strong>Email:</strong> {{ estudiante.correo }}</p>
+            
+            <p class="lead">Tu puntuación final fue:</p>
+            <h1 class="display-4 text-success">{{ puntuacion }}%</h1>
+            
+            <a href="{% url 'index' %}" class="btn btn-primary mt-4">Volver al inicio</a>
+            
+        </div>
+    </div>
+</div>
+{% endblock %}
+

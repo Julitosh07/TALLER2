@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Sistema de Evaluaciones{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <main>
+        {% block container %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - Proyecto Django Taller 2 ICFES</p>
+    </footer>
+</body>
+</html>

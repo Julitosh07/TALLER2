@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block container %}
+<header>Inicio del Simulacro Pruebas ICFES</header>
+<div class="icfes">
+    <div class="info">
+        
+        <div class="simulacro-contenedor">
+            <h1>Bienvenid@ {{ estudiante.nombre }} {{ estudiante.apellido }}</h1>
+            <p><strong>Identificación:</strong> {{ estudiante.documento }}</p>
+            <p><strong>Email:</strong> {{ estudiante.correo }}</p>
+
+            <h2>Selecciona una categoría para comenzar:</h2>
+            <div class="categorias-lista">
+                {% for categoria in categorias %}
+                    {% if categoria.id in respondidas %}
+                        <button class="boton-categoria" disabled>{{ categoria.nombre }} (Respondida)</button>
+                    {% else %}
+                        <a class="boton-categoria" href="{% url 'ver_preguntas_categoria' estudiante.id categoria.id %}">
+                            {{ categoria.nombre }}
+                        </a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
