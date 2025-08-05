@@ -7,11 +7,11 @@
         <div class="simulacro-contenedor">
             <h1>Bienvenid@</h1>
 
-            <h2>Selecciona una categoría para comenzar:</h2>
+            <h2>Selecciona el subtema a repasar:</h2>
             <div class="categorias-lista">
-                {% for categoria in categorias %}
-                    <a class="boton-categoria" href="{% url 'study:material_estudio_categoria' categoria.id %}">
-                        {{ categoria.nombre }}
+                {% for material_estudio in materiales_estudio %}
+                    <a class="boton-categoria" href="#">
+                        {{ material_estudio.titulo }}
                     </a>
                 {% endfor %}
             </div>

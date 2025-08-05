@@ -180,8 +180,4 @@ def responder_categoria(request, categoria_id):
         "preguntas": preguntas,
     })
 
-def material_estudio(request):
-    print("Accediendo a material de estudio")
-    return render(request, 'material_estudio.html')
-
 
