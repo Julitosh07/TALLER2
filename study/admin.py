@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Subtema, MaterialEstudio
+from .models import Subtema, MaterialEstudio, UserMaterialEstudio
 
 # Register your models here.
 @admin.register(Subtema)
@@ -10,6 +10,6 @@ class SubtemaAdmin(admin.ModelAdmin):
 
 @admin.register(MaterialEstudio)
 class MaterialEstudioAdmin(admin.ModelAdmin):
-    list_display = ('titulo', 'subtema', 'tipo', 'visto')
-    list_filter = ('tipo', 'visto', 'subtema')
+    list_display = ('titulo', 'subtema', 'tipo')
+    list_filter = ('tipo', 'subtema')
     search_fields = ('titulo', 'descripcion')

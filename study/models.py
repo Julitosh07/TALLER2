@@ -1,5 +1,6 @@
 from django.db import models
 from examenes.models import Category, Subject
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -21,7 +22,11 @@ class MaterialEstudio(models.Model):
         ('articulo', 'Artículo'),
     ])
     enlace = models.URLField(blank=True, null=True)
-    visto = models.BooleanField(default=False)
 
     def __str__(self):
         return self.titulo
+
+class UserMaterialEstudio(models.Model):
+    materiales = models.ForeignKey(MaterialEstudio, on_delete=models.CASCADE, related_name='materiales')
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE, related_name='usuarios')
+    visto = models.BooleanField(default=False)

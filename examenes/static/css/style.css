@@ -165,6 +165,7 @@ form input {
     transition: 0.3s;
 }
 
+
 .boton-categoria:hover {
     background-color: #2980b9;
 }
@@ -243,4 +244,8 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
     background-color: #2980b9;
+}
+
+.visto {
+    background-color: cadetblue;
 }
