@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block container %}
+
+<header>
+    <h1>Dashboard de Pruebas ICFES</h1>
+</header>
+
+<div class="dashboard-contenedor">
+    <div class="dashboard-card">
+        <h2>Total de Exámenes Presentados</h2>
+        <p>{{ total_examenes }}</p>
+    </div>
+</div>
+
+<div class="dashboard-contenedor">
+    {% for materia in promedio_por_materia %}
+        <div class="dashboard-card promedio-card 
+            {% if materia.promedio < 4 %}rojo
+            {% elif materia.promedio < 6 %}anaranjado
+            {% elif materia.promedio < 8 %}amarillo
+            {% else %}verde
+            {% endif %}">
+            <h2>{{ materia.nombre }}</h2>
+            <p>Promedio: {{ materia.promedio|default:"N/A" }}</p>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

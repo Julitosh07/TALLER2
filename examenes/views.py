@@ -1,13 +1,34 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Category, Subject, Question, User, Exam, Answer
 from .forms import UserForm
-from django.db.models import Count
+from django.db.models import Count, Avg
 
 # Create your views here.
 
 def index(request):
     categorias = Category.objects.all()
     return render(request, 'index.html', {'categorias': categorias})
+
+
+def dashboard_view(request):
+    total_examenes = Exam.objects.count()
+    promedio_por_materia = Subject.objects.annotate(
+        promedio=Avg('question__answer__es_correcta')
+    )
+    materias = []
+    for materia in promedio_por_materia:
+        materias.append(
+            {
+                "promedio": materia.promedio * 10,
+                "nombre": materia.nombre
+            }
+        )
+
+    context = {
+        'total_examenes': total_examenes,
+        'promedio_por_materia': materias,
+    }
+    return render(request, 'dashboard.html', context)
 
 def registro_estudiante(request):
     if request.method == 'POST':
