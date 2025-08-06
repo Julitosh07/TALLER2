@@ -10,7 +10,7 @@
             <h2>Selecciona el subtema a repasar:</h2>
             <div class="categorias-lista">
                 {% for material_estudio in materiales_estudio %}
-                    <a class="boton-categoria" href="#">
+                    <a class="boton-categoria" href="{% url 'study:material_estudio_detail' material_estudio.id %}">
                         {{ material_estudio.titulo }}
                     </a>
                 {% endfor %}

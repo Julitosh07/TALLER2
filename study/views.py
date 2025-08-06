@@ -14,3 +14,7 @@ def material_estudio_categoria(request, category_id):
     print('material_estudio', material_estudio)
 
     return render(request, 'material_estudio_categoria.html', {'materiales_estudio': materiales_estudio})
+
+def material_estudio_detail(request, material_estudio_id):
+    material = MaterialEstudio.objects.get(pk=material_estudio_id)
+    return render(request, 'material_estudio_detail.html', {'material': material})

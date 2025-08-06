@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block container %}
+<header>Material de Estudio</header>
+<div class="icfes">
+    <div class="info">
+        
+        <div class="simulacro-contenedor">
+            <h1>Bienvenid@</h1>
+
+            <h2>Este es el contenido del material de estudio:</h2>
+            <div class="categorias-lista">
+                    <p>{{ material.titulo }}</p>
+                    <p>{{ material.descripcion }}</p>
+                    <p>{{ material.explicacion }}</p>
+                    <p>{{ material.tipo }}</p>
+                    <p>{{ material.enlace }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
